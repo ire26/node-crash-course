@@ -1,5 +1,8 @@
-const name = 'Ire';
-console.log(name);
+//const name = 'Ire';
+//console.log(name);
 
-const age = 11111119
-console.log(age)
+const greet = (name) => {
+    console.log(`Hello, ${name}`)
+}
+greet('John')
+greet('Sarah')
