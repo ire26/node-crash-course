@@ -1,5 +1,6 @@
 const http = require('http')
 const fs = require('fs')
+const _ = require('lodash')
 
 const server = http.createServer((req, res) =>{
     console.log( req.url, req.method)
@@ -8,7 +9,7 @@ const server = http.createServer((req, res) =>{
     res.setHeader('Content-Type', 'text/html')
 
     let path = './views/'
-    switch(req.url){
+    switch(req.url){ //the req.url is taken in as input
         case '/':
             path += 'index.html'
             res.statusCode =200
@@ -29,7 +30,7 @@ const server = http.createServer((req, res) =>{
     }
     
     // send an html file
-    fs.readFile(path, (err, data) =>{
+    fs.readFile(path, (err, data) =>{ // path is a variable for location. It could have been 'index.html'
         if (err){
             console.log(err)
             res.end()
