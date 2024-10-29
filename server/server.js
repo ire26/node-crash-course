@@ -30,7 +30,7 @@ const server = http.createServer((req, res) =>{
     }
     
     // send an html file
-    fs.readFile(path, (err, data) =>{ // path is a variable for location. It could have been 'index.html'
+    fs.readFile(path, (err, data) =>{ // path is a variable for location. It could have been the location './views/index.html'
         if (err){
             console.log(err)
             res.end()
